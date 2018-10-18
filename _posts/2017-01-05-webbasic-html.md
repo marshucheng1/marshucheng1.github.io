@@ -2,7 +2,7 @@
 layout: post
 title: html标签中的lang属性
 date: 2017-01-05 13:31:27
-categories: webbasic
+categories: WEB
 tags: html
 author: MarsHu
 ---
