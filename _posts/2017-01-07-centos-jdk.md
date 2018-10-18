@@ -36,7 +36,7 @@ tar zxvf jdk-8u152-linux-x64.tar.gz
 ```
 vim /etc/profile
 ```
-按下i键，进入编辑状态，在 "export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL"
+按下i键，进入编辑状态，在`export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL`
 一行的上面添加如下内容:
 ```
 #set for java
