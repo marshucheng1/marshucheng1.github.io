@@ -3,7 +3,7 @@ layout: post
 title: 清白之年
 date: 2018-10-17 23:00:00
 categories: musics
-tags: music pushu
+tags: music
 author: MarsHu
 ---
 
