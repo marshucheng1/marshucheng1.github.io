@@ -52,7 +52,7 @@ C:\Windows\System32\drivers\etc
 ## 4.在eclipse中建立索引目录 ##
 `修改tomcat启动端口为80，并启动tomcat`。打开eclipse，按如下操作配置。
 ![eclipse1.png](http://marshucheng1.github.io/assets/eclipse1.png)
-![eclipse2.png](http://marshucheng1.github.io/eclipse2.png)
+![eclipse2.png](http://marshucheng1.github.io/assets/eclipse2.png)
 ## 5.手动更新下载maven索引 ##
 当进行完第4步时，默认已经可以自动更新索引了（eclipse右下角出现运行标志）。
 
