@@ -19,6 +19,10 @@ author: MarsHu
 
 `nexus-maven-repository-index.gz`和`nexus-maven-repository-index.properties`两个文件
 
+
+
+
+
 ## 2.将索引文件放入tomcat ##
 将下载后的索引文件放入如下tomcat目录
 
