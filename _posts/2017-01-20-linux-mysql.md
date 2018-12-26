@@ -1,7 +1,7 @@
 ---
 layout: post
 title: linux安装mysql5.7或5.6
-date: 2017-01-18 09:55:28
+date: 2017-01-20 09:55:28
 categories: linux
 tags: centos
 author: MarsHu
