@@ -15,7 +15,10 @@ permalink: /:year/:month/:day/:title/
 excerpt_separator: "\n\n\n\n"
 
 # 评论组件
-disqus_shortname: marshucheng1
+#disqus_shortname: marshucheng1
+gitment_rep: marshucheng1.github.io
+gitment_clientId: 648e03c00325e9dbff3d
+gitment_clientSecret: 8ef1d3efafedee5e15e5d14d638d3275d47a7753
 
 # statistic analysis 统计代码
 baidu_tongji_id: afd349dd849eccb0cf9880eca466b4b3
