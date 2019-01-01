@@ -2,7 +2,7 @@
 layout: post
 title: JAVA-jdbc+mysql+servlet分页
 date: 2017-02-14 15:33:43
-categories: java
+categories: WEB
 tags: servlet
 author: MarsHu
 ---
