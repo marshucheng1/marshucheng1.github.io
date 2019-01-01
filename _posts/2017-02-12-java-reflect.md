@@ -305,4 +305,4 @@ Method类提供的`Object invoke(Object obj, Object... args)`方法，可以帮�
 	}
 
 最后，我们一起来看看一张反射的内存图解（水平有限，有错之处，多多包涵）。
-![eclipse1.png](http://marshucheng1.github.io/assets/reflect.png)
+![reflect.png](http://marshucheng1.github.io/assets/reflect.png)
