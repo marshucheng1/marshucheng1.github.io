@@ -82,7 +82,7 @@ author: MarsHu
 
 ![bird7.png](http://marshucheng1.github.io/assets/bird7.png)
 
-# 游戏开发步骤（绘制游戏界面） #
+# 游戏开发步骤 #
 
 > ### 步骤一：新建工程和包，工程名`flybird` ###
 
