@@ -723,27 +723,15 @@ y坐标相对来说要抽象一点，y坐标计算图解（图16）：
 最后先把项目中所有用到的图片放出（突然觉得这样放出图片素材是最简单的......）：
 
 ![0.png](http://marshucheng1.github.io/assets/bird/0.png)
-
 ![1.png](http://marshucheng1.github.io/assets/bird/1.png)
-
 ![2.png](http://marshucheng1.github.io/assets/bird/2.png)
-
 ![3.png](http://marshucheng1.github.io/assets/bird/3.png)
-
 ![4.png](http://marshucheng1.github.io/assets/bird/4.png)
-
 ![5.png](http://marshucheng1.github.io/assets/bird/5.png)
-
 ![6.png](http://marshucheng1.github.io/assets/bird/6.png)
-
 ![7.png](http://marshucheng1.github.io/assets/bird/7.png)
-
 ![bg.png](http://marshucheng1.github.io/assets/bird/bg.png)
-
 ![column.png](http://marshucheng1.github.io/assets/bird/column.png)
-
 ![gameover.png](http://marshucheng1.github.io/assets/bird/gameover.png)
-
 ![ground.png](http://marshucheng1.github.io/assets/bird/ground.png)
-
 ![start.png](http://marshucheng1.github.io/assets/bird/start.png)
