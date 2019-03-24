@@ -155,6 +155,14 @@ author: MarsHu
 
 # 邮件发送测试方法,这里将目标邮箱xxx替换成自己的目标邮箱即可 #
 
+这里,顺带提一下,`markdown`因为支持`html`标签,所以当我们需要插入`html`作为代码时,
+
+会出现一些极度不友好的错误提示,意思是说`markdown`不知道到底是要显示`html`还是作为代码显示。
+
+在本例中,稍作了改变,每个`String`变量中的`<html>`标签,左边部分使用`&lt;`代替,这样就不报错了。
+
+复制代码时,**改过来即可**。感觉很弱智啊!
+
 	package ah.zhuoshan.service;
 	
 	import org.junit.Test;
@@ -187,15 +195,15 @@ author: MarsHu
 	    @Test
 	    public void sendHtmlMail() throws MessagingException {
 	        String html_text = "<!DOCTYPE html>\n" +
-	                "<html lang=\"en\">\n" +
-	                "<head>\n" +
-	                "    <meta charset=\"UTF-8\">\n" +
-	                "    <title>html邮件</title>\n" +
-	                "</head>\n" +
-	                "<body>\n" +
-	                "<h1>springboot-mail:简单html邮件发送</h1>\n" +
-	                "</body>\n" +
-	                "</html>";
+                "&lt;html lang=\"en\">\n" +
+                "<head>\n" +
+                "    <meta charset=\"UTF-8\">\n" +
+                "    <title>html邮件</title>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "<h1>springboot-mail:简单html邮件发送</h1>\n" +
+                "</body>\n" +
+                "</html>";
 	
 	        mailService.sendHtmlMail("目标邮箱xxx", "小马哥,强无敌", html_text);
 	    }
@@ -219,17 +227,17 @@ author: MarsHu
 	        String imagePath = "C:\\Users\\hucheng\\Desktop\\test.png";
 	        String imageId = "test001";
 	        String html_text = "<!DOCTYPE html>\n" +
-	                "<html lang=\"en\">\n" +
-	                "<head>\n" +
-	                "    <meta charset=\"UTF-8\">\n" +
-	                "    <title>html邮件</title>\n" +
-	                "</head>\n" +
-	                "<body>\n" +
-	                "<img src=\"cid:" + imageId + "\"/>\n" +
-	                "<br/>" +
-	                "<img src=\"cid:" + imageId + "\"/>\n" +
-	                "</body>\n" +
-	                "</html>";
+                "&lt;html lang=\"en\">\n" +
+                "<head>\n" +
+                "    <meta charset=\"UTF-8\">\n" +
+                "    <title>html邮件</title>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "<img src=\"cid:" + imageId + "\"/>\n" +
+                "<br/>" +
+                "<img src=\"cid:" + imageId + "\"/>\n" +
+                "</body>\n" +
+                "</html>";
 	        mailService.sendImageMail("目标邮箱xxx", "小马哥,别说话,吻我", html_text, imagePath, imageId);
 	    }
 	
@@ -244,13 +252,17 @@ author: MarsHu
 	    }
 	}
 
+
 # thymeleaf邮件发送模板,地址是视频作者博客地址,有兴趣的同学可以研究一些gayhub博客 #
+
+第二个很弱智的地方...下面的代码如果你是直接从html代码复制过来,那么对不起,肯定报错。
+但是如果你一行一行粘贴过来,弱智的通过了编写~~~
 
 	<!DOCTYPE html>
 	<html lang="en" xmlns:th="http://www.thymeleaf.org">
 	<head>
-	    <meta charset="UTF-8">
-	    <title>邮件模板</title>
+	<meta charset="UTF-8">
+	<title>邮件模板</title>
 	</head>
 	<body>
 	<p>你好,感谢您的注册,这是一封验证邮件,请点击下面的连接完成注册,感谢您的支持!</p>
