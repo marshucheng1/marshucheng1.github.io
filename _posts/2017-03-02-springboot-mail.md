@@ -27,7 +27,7 @@ author: MarsHu
 
 
 
-# 发送人邮件配置 #
+# 发送人邮件配置,本人使用的是网易163邮箱,可以替换成其他的 #
 	spring:
 	  mail:
 	    host: smtp.163.com
