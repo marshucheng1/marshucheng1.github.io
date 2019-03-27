@@ -21,6 +21,8 @@ author: MarsHu
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-thymeleaf</artifactId>
     </dependency>
+
+
 教程学习于慕课网,课程链接:[https://www.imooc.com/learn/1036](https://www.imooc.com/learn/1036 "Spring Boot 发送邮件")
 
 
