@@ -44,12 +44,30 @@ author: MarsHu
 
 ### FreeMarker Map的key值必须是String类型 ###
 
-官方明确说明了建议使用String类型做为key值
+官方明确说明了建议使用String类型做为key值，同时注意取值形式
 
 	map集合遍历：key代表map的key。
 	<#list customerType?keys as key >
 	<option value="${key}">${customerType[key]}</option>
 	</#list>
+
+### List集合遍历 ###
+
+	<#list list as item >
+		${item.name}
+	</#list>
+
+### freemark 判断内容是否为空 ###
+
+	//内容为空时。替代为空字符
+	${form.getMessageFrom()!''}
+
+	//判断是否为空
+	<#if form.obj??>
+	不为空时..
+    <#else>
+	为空时...
+    </#if>
 
 ### freemark 日期转换 ###
 
