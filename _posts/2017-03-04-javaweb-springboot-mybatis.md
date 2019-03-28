@@ -38,6 +38,8 @@ author: MarsHu
 
 ### mybatis接口示例 ###
 
+当有多个参数需要传入SQL语句时，使用`@Param`注解，指定设置。
+
 	package com.hyhb.dao;
 	
 	import com.hyhb.models.PotentialCustomer;
