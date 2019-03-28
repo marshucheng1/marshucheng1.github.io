@@ -36,10 +36,14 @@ author: MarsHu
 
 # 修改图片的src属性值 #
 
-	$("#imgId").attr('src',path); 
+	$("#imgId").attr('src', path); 
 
 # css内容超出宽度显示... #
 
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+
+# checkbox设置不能勾选 #
+
+	disabled="disabled"
