@@ -42,7 +42,7 @@ author: MarsHu
 
 
 
-# FreeMarker Map的key值必须是String类型 #
+### FreeMarker Map的key值必须是String类型 ###
 
 官方明确说明了建议使用String类型做为key值
 
@@ -51,23 +51,23 @@ author: MarsHu
 	<option value="${key}">${customerType[key]}</option>
 	</#list>
 
-# freemark 日期转换 #
+### freemark 日期转换 ###
 
 	${item.lastLoginDate?string("yyyy-MM-dd")}
 
-# freemark 三元表达式 #
+### freemark 三元表达式 ###
 
 	${(update_name_error??) ? string("has-error","")}
 
-# freemarker将数字转换为字符串 #
+### freemarker将数字转换为字符串 ###
 
 	${123?c} 结果为123 
 
-# freemark判断是否包含字符串 #
+### freemark判断是否包含字符串 ###
 
 	${(form.getMessageFrom()!'') ?contains(key) ? string("checked", "") }
 
-# freemark自动将多位数数字处理成字符串,以","隔开解决 #
+### freemark自动将多位数数字处理成字符串,以","隔开解决 ###
 
 	在模板中直接加.toString()转化数字为字符串，如 ${num.toString()}  
 
@@ -76,7 +76,7 @@ author: MarsHu
 	* 在模板中直接加<#setting number_format="#">;
 	* 通过freemarker.template.Configuration的config.setNumberFormat("#")来设定freemarker对数值的格式化;
 
-# SpringBoot导入支持jsp标签的jar包 # 
+### SpringBoot导入支持jsp标签的jar包 ###
 
 	<dependency>
 	   <groupId>commons-lang</groupId>
@@ -89,7 +89,7 @@ author: MarsHu
 	   <version>2.1</version>
 	</dependency>	
 
-# freemark使用模板继承,并使用自定义分页标签 #
+### freemark使用模板继承,并使用自定义分页标签 ###
 
 	package com.hyhb.configs;
 	
@@ -131,7 +131,7 @@ author: MarsHu
 	    }
 	}
 
-# 分页标签page.tld #
+### 分页标签page.tld ###
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
@@ -164,7 +164,7 @@ author: MarsHu
 		</tag>
 	</taglib>
 
-# 分页类-PageTag #
+### 分页类-PageTag ###
 
 	package com.hyhb.utils;
 	
@@ -291,7 +291,7 @@ author: MarsHu
 	    }
 	}
 
-# 分页实体类-Pagination #
+### 分页实体类-Pagination ###
 
 	package com.hyhb.utils;
 	
@@ -437,7 +437,7 @@ author: MarsHu
 	}
 
 
-# freemark页面中使用分页标签 #
+### freemark页面中使用分页标签 ###
 
 页面头部导入标签
 
