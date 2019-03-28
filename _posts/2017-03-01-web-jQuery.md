@@ -10,7 +10,7 @@ author: MarsHu
 * content
 {:toc}
 
-# 页面加载完成后执行 #
+### 页面加载完成后执行 ###
 	第一种：
     $(document).ready(function () {
 		......
@@ -21,7 +21,7 @@ author: MarsHu
 		......
 	});
 
-# 检查内容是否超出设定宽度 #
+### 检查内容是否超出设定宽度 ###
 
 	this指代当前需要判断的对象
 	this.offsetWidth < this.scrollWidth
@@ -30,20 +30,20 @@ author: MarsHu
 
 
 
-# 获取图片的src属性值 #
+### 获取图片的src属性值 ###
 
 	$("#imgId")[0].src; 
 
-# 修改图片的src属性值 #
+### 修改图片的src属性值 ###
 
 	$("#imgId").attr('src', path); 
 
-# css内容超出宽度显示... #
+### css内容超出宽度显示... ###
 
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 
-# checkbox设置不能勾选 #
+### checkbox设置不能勾选 ###
 
 	disabled="disabled"
