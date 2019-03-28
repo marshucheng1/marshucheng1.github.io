@@ -30,6 +30,12 @@ author: MarsHu
 	
 	}
 
+
+
+
+
+
+
 ### mybatis接口示例 ###
 
 	package com.hyhb.dao;
