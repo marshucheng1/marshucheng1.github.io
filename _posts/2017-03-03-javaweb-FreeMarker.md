@@ -12,7 +12,7 @@ author: MarsHu
 
 # SpringBoot配置FreeMarker模板 #
 
-	package com.hyhb.configs;
+	package com.study.configs;
 	
 	import cn.org.rapid_framework.freemarker.directive.BlockDirective;
 	import cn.org.rapid_framework.freemarker.directive.ExtendsDirective;
@@ -109,7 +109,7 @@ author: MarsHu
 
 ### freemark使用模板继承,并使用自定义分页标签 ###
 
-	package com.hyhb.configs;
+	package com.study.configs;
 	
 	import cn.org.rapid_framework.freemarker.directive.BlockDirective;
 	import cn.org.rapid_framework.freemarker.directive.ExtendsDirective;
@@ -184,7 +184,7 @@ author: MarsHu
 
 ### 分页类-PageTag ###
 
-	package com.hyhb.utils;
+	package com.study.utils;
 	
 	import javax.servlet.http.HttpServletRequest;
 	import javax.servlet.jsp.JspException;
@@ -311,7 +311,7 @@ author: MarsHu
 
 ### 分页实体类-Pagination ###
 
-	package com.hyhb.utils;
+	package com.study.utils;
 	
 	import java.util.ArrayList;
 	import java.util.HashMap;

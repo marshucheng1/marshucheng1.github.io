@@ -38,7 +38,7 @@ author: MarsHu
 	    default-encoding: utf-8
 
 # 发送邮件Service #
-	package ah.zhuoshan.service;
+	package ah.study.service;
 	
 	import org.springframework.beans.factory.annotation.Autowired;
 	import org.springframework.beans.factory.annotation.Value;
@@ -165,7 +165,7 @@ author: MarsHu
 
 复制代码时,**改过来即可**。感觉很弱智啊!
 
-	package ah.zhuoshan.service;
+	package ah.study.service;
 	
 	import org.junit.Test;
 	import org.junit.runner.RunWith;

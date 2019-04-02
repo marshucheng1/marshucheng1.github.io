@@ -14,7 +14,7 @@ author: MarsHu
 
 使用`@MapperScan`注解
 
-	package com.hyhb;
+	package com.study;
 	
 	import org.mybatis.spring.annotation.MapperScan;
 	import org.springframework.boot.SpringApplication;
@@ -40,9 +40,9 @@ author: MarsHu
 
 当有多个参数需要传入SQL语句时，使用`@Param`注解，指定设置。
 
-	package com.hyhb.dao;
+	package com.study.dao;
 	
-	import com.hyhb.models.PotentialCustomer;
+	import com.study.models.PotentialCustomer;
 	import org.apache.ibatis.annotations.Param;
 	
 	import java.util.List;
@@ -67,13 +67,13 @@ author: MarsHu
 
 	<?xml version="1.0" encoding="UTF-8" ?>
 	<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-	<mapper namespace="com.hyhb.dao.PotentialCustomerDao">
+	<mapper namespace="com.study.dao.PotentialCustomerDao">
 	
-	    <select id="getById" parameterType="java.lang.Integer" resultType="com.hyhb.models.PotentialCustomer">
+	    <select id="getById" parameterType="java.lang.Integer" resultType="com.study.models.PotentialCustomer">
 	        SELECT * FROM potential_customer WHERE id=#{id}
 	    </select>
 	
-	    <select id="getByContactNumber" parameterType="java.lang.String" resultType="com.hyhb.models.PotentialCustomer">
+	    <select id="getByContactNumber" parameterType="java.lang.String" resultType="com.study.models.PotentialCustomer">
 	        SELECT * FROM potential_customer WHERE
 	        contactNumber1=#{contactNumber} OR
 	        contactNumber2=#{contactNumber} OR
@@ -82,7 +82,7 @@ author: MarsHu
 	        contactNumber5=#{contactNumber}
 	    </select>
 	
-	    <select id="getListByParams" resultType="com.hyhb.models.PotentialCustomer">
+	    <select id="getListByParams" resultType="com.study.models.PotentialCustomer">
 	        SELECT * FROM potential_customer WHERE 1=1
 	        <if test="ownerList != null">
 	            AND owner in
@@ -150,7 +150,7 @@ author: MarsHu
 	        </if>
 	    </select>
 	
-	    <insert id="saveOrUpdate" parameterType="com.hyhb.models.PotentialCustomer">
+	    <insert id="saveOrUpdate" parameterType="com.study.models.PotentialCustomer">
 	        INSERT INTO potential_customer
 	        <trim prefix="(" suffix=")" suffixOverrides=",">
 	            <if test="id != null">
@@ -473,7 +473,7 @@ author: MarsHu
 	        </trim>
 	    </insert>
 	
-	    <delete id="delete" parameterType="com.hyhb.models.PotentialCustomer">
+	    <delete id="delete" parameterType="com.study.models.PotentialCustomer">
 	        DELETE FROM potential_customer WHERE id=#{id}
 	    </delete>
 	
@@ -483,10 +483,10 @@ author: MarsHu
 
 这里只有基本的业务操作。可以根据实际情况构建方法。
 
-	package com.hyhb.service;
+	package com.study.service;
 	
-	import com.hyhb.models.PotentialCustomer;
-	import com.hyhb.views.forms.dashboard.DashboardPotentialCustomerForm;
+	import com.study.models.PotentialCustomer;
+	import com.study.views.forms.dashboard.DashboardPotentialCustomerForm;
 	
 	import java.util.List;
 	
@@ -506,13 +506,13 @@ author: MarsHu
 
 ### service实现层示例 ###
 
-	package com.hyhb.service.impl;
+	package com.study.service.impl;
 	
-	import com.hyhb.dao.PotentialCustomerDao;
-	import com.hyhb.models.PotentialCustomer;
-	import com.hyhb.service.PotentialCustomerService;
-	import com.hyhb.utils.DateTimeUtil;
-	import com.hyhb.views.forms.dashboard.DashboardPotentialCustomerForm;
+	import com.study.dao.PotentialCustomerDao;
+	import com.study.models.PotentialCustomer;
+	import com.study.service.PotentialCustomerService;
+	import com.study.utils.DateTimeUtil;
+	import com.study.views.forms.dashboard.DashboardPotentialCustomerForm;
 	import org.springframework.stereotype.Service;
 	
 	import javax.annotation.Resource;
