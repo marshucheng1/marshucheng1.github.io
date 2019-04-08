@@ -271,7 +271,7 @@ author: MarsHu
 	    private AsyncTaskService asyncTaskService;
 	    @Value("${spring.mail.username}")
 	    private String from;
-	
+
 		/*定时10秒发送*/
 	    @Scheduled(cron="0/10 * *  * * ? ")
 	    public void autoPush() {
