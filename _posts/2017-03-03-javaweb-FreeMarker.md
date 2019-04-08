@@ -81,6 +81,10 @@ author: MarsHu
 
 	${123?c} 结果为123 
 
+### freemarker将字符串转换数字 ###
+
+	${123?number} 字符串123转换为数字123 
+
 ### freemark判断是否包含字符串 ###
 
 	${(form.getMessageFrom()!'') ?contains(key) ? string("checked", "") }
