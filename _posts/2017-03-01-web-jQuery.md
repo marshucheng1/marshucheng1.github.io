@@ -47,3 +47,13 @@ author: MarsHu
 ### checkbox设置不能勾选 ###
 
 	disabled="disabled"
+
+### 元素定位后垂直居中 ###
+假定该元素上一个元素的高度是`460px`，这里`margin-left`的值整合是宽度的一半。顶部偏移：是`460/2-110/2=175`。
+
+	position: absolute;
+	width: 102px;
+	height: 110px;
+	left: 50%;
+	margin-left: -51px;
+	top: 175px;
