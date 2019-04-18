@@ -72,7 +72,9 @@ author: MarsHu
 ### freemark 日期转换 ###
 
 	${item.lastLoginDate?string("yyyy-MM-dd")}
-
+	//空值判断
+	${(startTime?string("yyyy-MM-dd HH:mm:ss"))!''}
+	
 ### freemark 三元表达式 ###
 
 	${(update_name_error??) ? string("has-error","")}
