@@ -57,3 +57,26 @@ author: MarsHu
 	left: 50%;
 	margin-left: -51px;
 	top: 175px;
+
+### javaScript原生ajax请求-页面加载完执行 ###
+
+	function myfun() {
+        if (window.XMLHttpRequest) {
+            var oAjax = new XMLHttpRequest();
+        } else {
+            var oAjax = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        oAjax.open("GET", "xxx请求地址?t='+new Date().getTime()", true);
+        oAjax.send();
+        oAjax.onreadystatechange = function () {
+            if (oAjax.readyState == 4) {
+                if (oAjax.status == 200) {
+					console.log("success");
+                    console.log(oAjax.responseText);
+                } else {
+                    console.log("error");
+                }
+            }
+        };
+    }
+    window.onload = myfun;
