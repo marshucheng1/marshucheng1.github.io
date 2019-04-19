@@ -80,3 +80,11 @@ author: MarsHu
         };
     }
     window.onload = myfun;
+
+### javaScript获取当前地址栏url ###
+
+	var href = window.location.href;
+
+### javaScript刷新页面 ###
+	
+	window.location.reload()
