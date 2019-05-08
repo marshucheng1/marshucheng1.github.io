@@ -49,6 +49,7 @@ make install
 ```
 6. 下载nginx，选择自己需要的版本，官方地址 http://nginx.org/download/
 ```
+cd /usr/local/src/
 wget http://nginx.org/download/nginx-1.9.8.tar.gz
 ```
 7. 解压并安装nginx
@@ -165,6 +166,7 @@ vim /etc/init.d/nginx
 
 	b.修改脚本权限
 ```
+cd /etc/init.d/
 chmod 755 nginx
 ```
 
