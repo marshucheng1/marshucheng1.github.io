@@ -77,6 +77,10 @@ author: MarsHu
 	最后:删除后,需要提交一次!
 	git push sell master
 
+	8.当出现没有用户权限时,又不弹出输入用户窗口时
+	git config --system --unset credential.helper
+	然后就能重现看到了,并不适用所有状况。
+
 
 
 
