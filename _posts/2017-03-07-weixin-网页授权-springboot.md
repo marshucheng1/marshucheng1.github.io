@@ -189,7 +189,7 @@ author: MarsHu
 	        log.info("进入auth方法");
 	        log.info("code={}", code);
 	
-	        String url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=wxe0af2574c170f1d5&secret=08cca0004211cab7f7e2acbef037d2fc&code=" + code + "&grant_type=authorization_code";
+	        String url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=你的微信公众号AppID&secret=你的微信公众号AppSecret&code=" + code + "&grant_type=authorization_code";
 	        /*RestTemplate这个东西可以看成是HttpClient或是其他一些http请求工具*/
 	        RestTemplate restTemplate = new RestTemplate();
 	        String response = restTemplate.getForObject(url, String.class);
