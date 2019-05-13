@@ -174,3 +174,43 @@ service mysqld start
 show variables like 'char%';
 ```
 发现编码已经变更。
+
+
+### 9.Mysql5.7数据库密码忘了怎么整 ###
+
+首先关闭`mysql`数据库
+
+	systemctl stop mysqld
+
+然后编辑数据库配置文件
+
+	vi /etc/my.cnf
+
+在配置文件`[msyqld]`下面添加一行`skip-grant-tables`。保存配置文件。
+
+重启`mysql`数据库
+
+	systemctl start mysqld
+
+重新登陆`mysql`数据库，这个时候。已经不需要密码了。让我们重新修改密码。
+
+	mysql -u root -p
+	
+	use mysql;
+
+	update user set authentication_string=password('123456') where user='root' and host='localhost';
+
+	exit;
+
+再次关闭`mysql`数据库
+
+	systemctl stop mysqld
+
+然后再次编辑数据库配置文件，取消上面添加的那行。保存配置文件。
+
+再次重启`mysql`数据库
+
+	systemctl start mysqld
+
+
+
