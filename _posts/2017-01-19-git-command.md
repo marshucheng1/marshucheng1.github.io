@@ -34,6 +34,9 @@ author: MarsHu
 	git push 仓库地址
 	例:git push origin feature/keywordsub
 
+	获取指定分支代码
+	git clone -b 分支名称 地址;
+
 
 
   
