@@ -88,3 +88,24 @@ author: MarsHu
 ### javaScript刷新页面 ###
 	
 	window.location.reload()
+
+### 以下载的形式打开txt类型文件 ###
+txt类型文件，在浏览器中默认是直接打开的，通过设置可以实现直接下载的形式。
+
+原文地址：`https://www.jianshu.com/p/d3378320289c`。具体代码如下，省略部分代码
+
+	......
+	success: function (data) {
+		console.log(data);
+		var url = config.baseDataUrl + "/" + downname;
+		//window.location.href = url;
+		const fileName = url.split('/').pop().split('?')[0];
+		var a = document.createElement('a');
+		a.download = fileName;
+		a.href = url;
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
+		window.URL.revokeObjectURL(url);
+	}
+	......
