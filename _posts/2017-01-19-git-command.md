@@ -11,6 +11,9 @@ author: MarsHu
 {:toc}
 
 ### git主要命令 ###
+	设置提交用户的用户名和邮箱
+ 	git config --global user.email "xxx@xxx.com"
+  	git config --global user.name "xxxname"
 
 	从git仓库获取代码
 	git clone 地址;
@@ -84,6 +87,14 @@ author: MarsHu
 	git config --system --unset credential.helper
 	然后就能重现看到了,并不适用所有状况。
 
+### git提交冲突 ###
+
+如果一个文件需要频繁修改，用忽略文件的方式，明显不适合。
+例如是某个properties配置文件。
+
+进入到拥有该文件的目录【一定要是改文件所在目录下！！！】，然后执行如下命令
+
+	git update-index --assume-unchanged ftp.properties
 
 
 
