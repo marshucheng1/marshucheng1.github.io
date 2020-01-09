@@ -109,3 +109,32 @@ txt类型文件，在浏览器中默认是直接打开的，通过设置可以�
 		window.URL.revokeObjectURL(url);
 	}
 	......
+
+### 禁止textarea拖动 ###
+textarea默认情况可以拖拉改变大小，会影响显示效果，追加`resize: none`样式，可以禁止拖拉。代码如下
+
+	<textarea style="resize: none" rows="10"></textarea>
+
+### 微信公众号页面自动关闭 ###
+实际开发过程中，在获取openid或有其他业务时，需要实现页面自动关闭。代码如下：
+
+	<!DOCTYPE html>
+	<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>one</title>
+	</head>
+	<body>
+	
+	</body>
+	<script>
+		setTimeout(function() {
+			//这个可以关闭安卓系统的手机
+			document.addEventListener('WeixinJSBridgeReady', function() {
+				WeixinJSBridge.call('closeWindow');
+			}, false);
+			//这个可以关闭ios系统的手机
+			WeixinJSBridge.call('closeWindow');
+		}, 1000)
+	</script>
+
