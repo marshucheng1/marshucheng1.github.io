@@ -74,8 +74,6 @@ commons-net包下提供的相关内容实现业务需求。maven导包如下：
 	            }
 	        } catch (Exception e) {
 	            e.printStackTrace();
-	        } finally {
-	            disConnection(ftpClient);
 	        }
 	        return ftpClient;
 	    }
