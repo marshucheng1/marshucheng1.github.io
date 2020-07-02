@@ -73,3 +73,7 @@ cd /usr/local/nexus/nexus-2.11.2-06/bin/
 在浏览器地址栏输入`http://所在服务器ip:8081/nexus`访问。
 
 默认用户名为admin，密码admin123
+
+### 8.Maven添加本地jar包到本地仓库 ###
+
+	mvn install:install-file -Dfile=XXX-3.6.7.jar -DgroupId=com.spiredoc -DartifactId=XXX-XXX-XXX -Dversion=3.6.7 -Dpackaging=jar
