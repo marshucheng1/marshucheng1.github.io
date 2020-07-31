@@ -13,7 +13,7 @@ author: MarsHu
 # eclipse-为阿里云maven仓库建立本地索引 #
 ## 1.手动下载索引文件 ##
 在浏览器地址栏访问如下地址:
-`http://repo1.maven.org/maven2/.index/`
+`https://repo1.maven.org/maven2/.index/`
 
 打开网页后，将滚动条拉到网页最底部，分别下载
 
