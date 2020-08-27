@@ -597,6 +597,14 @@ SpringSecurity默认的用户登录验证是不符合我们要求的。所以我
 		
 	}
 
+这里`@ConfigurationProperties`会用黄字提醒，需要在`zhqx-security-core`项目的`pom.xml`文件中引入下面依赖：
+
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-configuration-processor</artifactId>
+		<optional>true</optional>
+	</dependency>
+
 `SecurityCoreConfig`代码
 
 	package com.zhqx.security.core;
