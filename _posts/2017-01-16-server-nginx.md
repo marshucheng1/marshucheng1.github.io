@@ -24,7 +24,7 @@ yum -y install openssl openssl-devel
 2. 使用wget命令下载PCRE库
 ```
 cd /usr/local/src/
-wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.41.tar.gz
+wget http://downloads.sourceforge.net/project/pcre/pcre/8.41/pcre-8.41.tar.gz
 ```
 3. 解压并安装PCRE库
 ```
