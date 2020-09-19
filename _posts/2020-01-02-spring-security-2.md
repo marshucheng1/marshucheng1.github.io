@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Spring Security开发安全的REST服务（二）
+title: 使用Spring MVC开发RESTful API（二）
 date: 2020-01-02 11:31:22
 categories: JavaWeb
 tags: springboot
