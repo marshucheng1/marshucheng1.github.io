@@ -775,6 +775,14 @@ QQImpl，实现QQ接口，实现获取QQ信息的逻辑：
 			filter.setFilterProcessesUrl(filterProcessesUrl);
 			return (T) filter;
 		}
+
+		public String getFilterProcessesUrl() {
+			return filterProcessesUrl;
+		}
+
+		public void setFilterProcessesUrl(String filterProcessesUrl) {
+			this.filterProcessesUrl = filterProcessesUrl;
+		}
 	}
 
 修改`zhqx-security-core`项目中`com.zhqx.security.core.properties`包下的`SocialProperties`类。
