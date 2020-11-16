@@ -212,5 +212,6 @@ show variables like 'char%';
 
 	systemctl start mysqld
 
-
+### 10.windows下修改mysql数据库密码 ###
+mysqladmin -u用户名 -p旧密码 password 新密码
 
