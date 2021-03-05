@@ -41,3 +41,39 @@ author: MarsHu
 	<div lang='en'>this is English .</div>
 	```
 表示该div内部内容为英文
+
+7.font综合属性的设置顺序
+
+	font:font-style font-variant font-weight font-size/line-height font-family
+
+	font-style:字体风格（倾斜）
+	font-variant：字母大小写
+	font-weight：加粗
+	font-size：字体大小
+	font-family：何种字体
+
+	1.只有同时设置font-size和font-family，属性才会起作用
+	2.值之间空格隔开
+	3.前面3个属性可以任意顺序，后面2个必须固定
+
+8.background综合属性设置顺序
+
+	background:background-color background-image background-repeat background-attachment background-position 
+
+	background-color：背景颜色
+	background-image：背景图片
+	background-repeat：是否重复
+	background-attachment：是否随滚轮滚动
+	background-postion：图片位置
+
+	1.各值之间用空格分割，不分先后顺序
+	2.背景图片会遮盖背景色
+
+9.list-style综合属性设置顺序
+
+	list-style:list-style-type list-style-position list-style-image
+
+	1.值之间用空格分隔
+	2.顺序可以不固定
+	3.list-style-image会覆盖list-style-type的设置
+
