@@ -119,7 +119,7 @@ Springboot2.3版本后,web模块下面没有依赖 validation。需要在pom文�
 		//...
 	}
 
-添加后,我们访问后,发现服务器返回如下错误提示,但是控制台并没有任何关于校验的信息。
+添加后,我们访问后,发现服务器返回如下错误提示,控制台打印出异常信息
 
 	{
 	    "code": 9999,
@@ -127,26 +127,23 @@ Springboot2.3版本后,web模块下面没有依赖 validation。需要在pom文�
 	    "request": "POST /v1/banner/test/11"
 	}
 
-这是因为我们对异常信息进行了统一处理,捕获的异常信息直接被覆盖了。修改统一异常信息处理类
+控制台打印内容:javax.validation.ConstraintViolationException: test1.id: id范围为1-10
 
-	//注释掉,当前的异常处理逻辑
-	//@ExceptionHandler(value = Exception.class)
+这是因为我们对异常信息进行了统一处理,控制台打印了捕获的当前异常
+
+	@ExceptionHandler(value = Exception.class)
     @ResponseBody
     @ResponseStatus(code = HttpStatus.INTERNAL_SERVER_ERROR)
     public UnifyResponse handleException(HttpServletRequest request, Exception e) {
         String requestUrl = request.getRequestURI();
         String method = request.getMethod();
+		//打印异常信息
+		System.out.println(e);
         UnifyResponse message = new UnifyResponse(9999, "服务器异常", method + " " +requestUrl);
         return message;
     }
 
-注释掉之后,再次访问,控制台会打印错误信息:
-
-	javax.validation.ConstraintViolationException: test1.id: id范围为1-10
-
 ### 使用@Validated注解进行对象参数校验  ###
-继续保留上一步对统一异常处理类的修改,即注释掉@ExceptionHandler(value = Exception.class)。
-
 当我们对PersonDTO的name属性进行参数验证
 
 	public class PersonDTO {
@@ -183,8 +180,6 @@ Springboot2.3版本后,web模块下面没有依赖 validation。需要在pom文�
 
 
 ### 级联对象参数校验  ###
-继续保留上一步对统一异常处理类的修改,即注释掉@ExceptionHandler(value = Exception.class)。
-
 修改PersonDTO,追加SchoolDTO对象,假设我们需要校验SchoolDTO对象的schoolName属性。
 
 	package com.zhqx.missyou.dto;
@@ -329,8 +324,6 @@ Springboot2.3版本后,web模块下面没有依赖 validation。需要在pom文�
 	
 	}
 
-继续保留上一步对统一异常处理类的修改,即注释掉@ExceptionHandler(value = Exception.class)。
-
 前端访问:http://localhost:8080/v1/banner/test/10,post请求,携带参数如下:
 
 	{"name":"tom","age":17,"password1":"123456","password2":"12345"}
@@ -346,7 +339,7 @@ Springboot2.3版本后,web模块下面没有依赖 validation。需要在pom文�
 
 控制台打印错误信息
 
-	codes [personDTO.,]; arguments []; default message []]; default message [passwords are not equal]] ]
+	default message [passwords are not equal]] ]
 
 假设我们还需在注解中添加额外的参数,比如控制密码的最小长度为4和最大长度为6
 
@@ -374,20 +367,21 @@ Springboot2.3版本后,web模块下面没有依赖 validation。需要在pom文�
 
 修改默认的密码长度限制
 
-@PasswordEqual(min = 1)
-public class PersonDTO {
-    @Length(min = 1, max = 4, message = "名字为1-4个字符")
-    private String name;
-
-    private Integer age;
-
-    private String password1;
-
-    private String password2;、
-
-	//...省略其他代码
-
-}
+	//修改最小密码长度为1,覆盖原来的最小长度设置
+	@PasswordEqual(min = 1)
+	public class PersonDTO {
+	    @Length(min = 1, max = 4, message = "名字为1-4个字符")
+	    private String name;
+	
+	    private Integer age;
+	
+	    private String password1;
+	
+	    private String password2;、
+	
+		//...省略其他代码
+	
+	}
 
 修改注解处理类PasswordValidator
 

@@ -173,6 +173,8 @@ RuntimeException:运行时异常---通常是我们不可以处理的异常
 	    public UnifyResponse handleException(HttpServletRequest request, Exception e) {
 	        String requestUrl = request.getRequestURI();
 	        String method = request.getMethod();
+			//打印异常信息
+			System.out.println(e);
 	        UnifyResponse message = new UnifyResponse(9999, "服务器异常", method + " " +requestUrl);
 	        return message;
 	    }
@@ -214,6 +216,8 @@ RuntimeException:运行时异常---通常是我们不可以处理的异常
 	    public UnifyResponse handleException(HttpServletRequest request, Exception e) {
 	        String requestUrl = request.getRequestURI();
 	        String method = request.getMethod();
+			//打印异常信息
+			System.out.println(e);
 	        UnifyResponse message = new UnifyResponse(9999, "服务器异常", method + " " +requestUrl);
 	        return message;
 	    }
@@ -304,6 +308,8 @@ RuntimeException:运行时异常---通常是我们不可以处理的异常
 	    public UnifyResponse handleException(HttpServletRequest request, Exception e) {
 	        String requestUrl = request.getRequestURI();
 	        String method = request.getMethod();
+			//打印异常信息
+			System.out.println(e);
 	        UnifyResponse message = new UnifyResponse(9999, "服务器异常", method + " " +requestUrl);
 	        return message;
 	    }
