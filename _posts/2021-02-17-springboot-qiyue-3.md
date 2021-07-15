@@ -37,6 +37,13 @@ author: MarsHu
 
 如果时post请求,且前端提交的参数是json类型,后端如何接收。前端请求参数如下。
 
+
+
+
+
+
+
+
 	{"name":"tome","age":17}
 
 如果没有特别的实体来封装对应的参数。我们可以使用Map<String, Object>来接收参数
