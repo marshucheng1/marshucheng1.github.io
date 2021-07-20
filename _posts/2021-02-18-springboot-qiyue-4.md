@@ -756,3 +756,28 @@ BaseEntity类:
 	    private Date updateTime;
 	    private Date deleteTime;
 	}
+
+### 自定义JPQL替代JPA命名方法  ###
+
+ThemeRepository类:
+
+	package com.zhqx.missyou.repository;
+	
+	import com.zhqx.missyou.model.Theme;
+	import org.springframework.data.jpa.repository.JpaRepository;
+	import org.springframework.data.jpa.repository.Query;
+	import org.springframework.data.repository.query.Param;
+	import org.springframework.stereotype.Repository;
+	
+	import java.util.List;
+	import java.util.Optional;
+	
+	@Repository
+	public interface ThemeRepository extends JpaRepository<Theme, Long> {
+	
+	    @Query("select t from Theme t where t.name in (:names)")
+	    List<Theme> findByNames(@Param("names") List<String> names);
+
+	}
+
+这里如果@Param("names")中的名字是什么,则在(:names)中的名字应该与之对应。
