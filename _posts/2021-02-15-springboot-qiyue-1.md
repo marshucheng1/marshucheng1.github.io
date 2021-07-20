@@ -101,6 +101,21 @@ byName:按名称注入、byType:按类型注入（默认注入方式）
 		private  Demo demo2;
 	}
 
+如果需要注入一个静态的成员对象时,直接在成员变量上使用@Autowired是不正确的,应该在setter方法上使用:
+
+	public class TestController {
+		
+		private static  Demo demo;
+
+		//在属性的Setter方法上加上注解
+		@Autowired
+		public void setDemo(Demo demo) {
+			TestController.demo = demo;
+		}
+	}
+
+
+
 ### @Configuration配置类  ###
 @Configuration主要用来替代以前使用xml文件配置类的初始化。
 
