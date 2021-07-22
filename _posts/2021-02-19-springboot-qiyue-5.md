@@ -849,3 +849,73 @@ SpuController类:
 	        return new PagingDozer<>(page, SpuSimplifyVO.class);
 	    }
 	}
+
+### Optional的使用  ###
+使用Optional代替原本直接返回对象的模式:
+
+	package com.zhqx.missyou.repository;
+	
+	import com.zhqx.missyou.model.Theme;
+	import org.springframework.data.jpa.repository.JpaRepository;
+	import org.springframework.data.jpa.repository.Query;
+	import org.springframework.data.repository.query.Param;
+	import org.springframework.stereotype.Repository;
+	
+	import java.util.List;
+	import java.util.Optional;
+	
+	@Repository
+	public interface ThemeRepository extends JpaRepository<Theme, Long> {
+	
+	    @Query("select t from Theme t where t.name in (:names)")
+	    List<Theme> findByNames(@Param("names") List<String> names);
+	
+	    //代替方法:Theme findByName(String name);
+	    Optional<Theme> findByName(String name);
+	}
+
+在控制器ThemeController中使用Optional进行数据处理
+
+	package com.zhqx.missyou.api.v1;
+	
+	import com.github.dozermapper.core.DozerBeanMapperBuilder;
+	import com.github.dozermapper.core.Mapper;
+	import com.zhqx.missyou.exception.http.NotFoundException;
+	import com.zhqx.missyou.model.Theme;
+	import com.zhqx.missyou.service.ThemeService;
+	import com.zhqx.missyou.vo.ThemePureVO;
+	import org.springframework.beans.factory.annotation.Autowired;
+	import org.springframework.validation.annotation.Validated;
+	import org.springframework.web.bind.annotation.*;
+	
+	import java.util.ArrayList;
+	import java.util.Arrays;
+	import java.util.List;
+	import java.util.Optional;
+	
+	@RestController
+	@RequestMapping("theme")
+	@Validated
+	public class ThemeController {
+	    @Autowired
+	    private ThemeService themeService;
+	
+	    @GetMapping("/by/names")
+	    public List<ThemePureVO> getThemeGroupByNames(@RequestParam(name = "names") String names) {
+	        List<String> nameList = Arrays.asList(names.split(","));
+	        List<Theme> themes = themeService.findByNames(nameList);
+	        List<ThemePureVO> list = new ArrayList<>();
+	        themes.forEach(theme -> {
+	            Mapper mapper = DozerBeanMapperBuilder.buildDefault();
+	            ThemePureVO vo = mapper.map(theme, ThemePureVO.class);
+	            list.add(vo);
+	        });
+	        return list;
+	    }
+	
+	    @GetMapping("/name/{name}/with_spu")
+	    public Theme getThemeByNameWithSpu(@PathVariable(name = "name") String themeName){
+	        Optional<Theme> optionalTheme = this.themeService.findByName(themeName);
+	        return optionalTheme.orElseThrow(()-> new NotFoundException(30003));
+	    }
+	}
