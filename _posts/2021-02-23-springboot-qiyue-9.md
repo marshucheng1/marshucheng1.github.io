@@ -245,7 +245,7 @@ RocketMQ本身是自带延迟消息队列的,而rabbitMQ和Kafka是需要通过�
 
 通过消息队列,则可以将A生产的订单放入,由消息队列控制向B传输,这样就完成了A和B的解耦。
 
-下载RocketMQ,`https://rocketmq.apache.org/docs/quick-start/`,安装官方说明,配置运行环境(这里需要注意的是,示例中配置的环境变量值是有""的,配置不能带""),windows下启动。
+下载RocketMQ,`https://rocketmq.apache.org/docs/quick-start/`,按照官方说明,配置运行环境(这里需要注意的是,示例中配置的环境变量值是有""的,配置不能带""),windows下启动。
 
 	错误: 找不到或无法加载主类 Files\Java\jdk1.8.0_192\jre\lib\ext
 
